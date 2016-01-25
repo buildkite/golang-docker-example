@@ -7,12 +7,6 @@ using Buildkite.
 
 ## Using in your own build pipelines
 
-We've wrapped up the `$GOPATH` wrangling required to get Golang projects to run
-into a `pre-command` hook which you can see here:
-https://github.com/buildkite/golang-example/blob/master/.buildkite/hooks/pre-command
-
-To use in your own build pipelines:
-
 1. Ensure `docker-compose` is installed on your build system. For details on how to do this, see: https://docs.docker.com/compose/install/
 
 2. Use our `Dockerfile` and `docker-compose.yml` files as defaults:
