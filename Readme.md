@@ -1,9 +1,9 @@
 # Buildkite Golang Docker Example
 
+[![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
+
 This repository is an example on how to test a Golang project through Docker
 using Buildkite.
-
-[Add this example to your Buildkite organization](https://buildkite.com/new)
 
 ## Using in your own build pipelines
 
