@@ -4,7 +4,7 @@
   "steps": [
     {
       "type": "script",
-      "name": ":buildkite:",
+      "name": ":pipeline:",
       "command": "buildkite-agent pipeline upload"
     }
   ]
