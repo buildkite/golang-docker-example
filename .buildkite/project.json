@@ -1,6 +1,5 @@
 {
   "name": "Golang Docker Example",
-  "repository": "https://github.com/buildkite/golang-docker-example.git",
   "steps": [
     {
       "type": "script",
