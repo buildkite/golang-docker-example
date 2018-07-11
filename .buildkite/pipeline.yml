@@ -1,5 +1,6 @@
 steps:
   - name: ":golang:"
     command: "./scripts/test.sh"
-    env:
-      BUILDKITE_DOCKER_COMPOSE_CONTAINER: "app"
+    plugins:
+      docker-compose#v2.5.0:
+        run: app
