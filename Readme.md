@@ -13,8 +13,8 @@ using Buildkite.
 
    ```sh
    cd /your/golang/repo
-   curl -o Dockerfile https://raw.githubusercontent.com/buildkite/golang-golang-example/master/Dockerfile
-   curl -o docker-compose.yml https://raw.githubusercontent.com/buildkite/golang-golang-example/master/docker-compose.yml
+   curl -o Dockerfile https://raw.githubusercontent.com/buildkite/golang-docker-example/master/Dockerfile
+   curl -o docker-compose.yml https://raw.githubusercontent.com/buildkite/golang-docker-example/master/docker-compose.yml
    ```
 
 3. Replace `/go/src/github.com/buildkite/golang-docker-example` in the `Dockerfile` and
