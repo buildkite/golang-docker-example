@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	logger.Print("This is the best Golang program, ever!\n")
+	logger.Print("This is the best Golang program, ever!")
 }

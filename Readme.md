@@ -2,8 +2,7 @@
 
 [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-This repository is an example on how to test a Golang project through Docker
-using Buildkite.
+This repository is an example on how to test a [Golang](https://go.dev) project through [Docker](https://docker.com) using Buildkite.
 
 ## Using in your own build pipelines
 
@@ -15,30 +14,6 @@ using Buildkite.
    cd /your/golang/repo
    curl -o Dockerfile https://raw.githubusercontent.com/buildkite/golang-docker-example/master/Dockerfile
    curl -o docker-compose.yml https://raw.githubusercontent.com/buildkite/golang-docker-example/master/docker-compose.yml
-   ```
-
-3. Replace `/go/src/github.com/buildkite/golang-docker-example` in the `Dockerfile` and
-   `docker-compose.yml` files with your own Golang import path.  For example,
-   if your import path in Golang looks like this:
-
-   ```go
-   import (
-     "github.com/keithpitt/project/sub-package"
-   )
-   ```
-
-   Then you would replace `/go/src/github.com/buildkite/golang-docker-example`
-   with `/go/src/github.com/keithpitt/project` (note the `sub-package` part of
-   the import is not included). This path should also match the directory
-   structure within the `$GOPATH` on your own development machine.
-
-4. Add to your build pipeline and add the `BUILDKITE_DOCKER_COMPOSE_CONTAINER` env:
-
-   ```yml
-   steps:
-     - command: "./scripts/test.sh"
-       env:
-         BUILDKITE_DOCKER_COMPOSE_CONTAINER: "app"
    ```
 
 ## License

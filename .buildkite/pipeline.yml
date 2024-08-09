@@ -1,6 +1,30 @@
 steps:
-  - name: ":golang:"
-    command: "./scripts/test.sh"
+  # group up all the steps that are related to the quality assurance of the code
+  - group: ':mag: QA'
+    id: quality_assurance
+    steps:
+    - key: lint
+      label: ':golang: vet'
+      command: go vet ./...
+      plugins:
+        - docker-compose#v5.3.0:
+            run: app
+    - key: test
+      label: ':golang: test'
+      command: 
+        - go test -v -count=1 -cover ./... -coverprofile=coverage.txt -covermode=atomic
+      artifact_paths:
+        - 'coverage.txt' # upload the coverage report as an artifact
+      plugins:
+        - docker-compose#v5.3.0:
+            run: app
+  # build the application after the quality assurance steps are done
+  - key: build
+    label: ':golang: build'
+    command: go build -o dist/app
+    artifact_paths:
+      - 'dist/app' # upload the built application as an artifact
     plugins:
-      - docker-compose#v5.2.0:
+      - docker-compose#v5.3.0:
           run: app
+    depends_on: quality_assurance
