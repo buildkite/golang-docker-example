@@ -2,17 +2,18 @@ package main
 
 import (
 	"testing"
+
 	"github.com/stretchr/testify/assert"
 
-	"os"
-	"io"
 	"bytes"
+	"io"
+	"os"
 )
 
 func TestMain(t *testing.T) {
 	mainStdout := captureStdout(main)
 
-	assert.Equal(t, mainStdout, "This is the best Golang program, ever!\n")
+	assert.Equal(t, "This is the best Golang program, ever!\n", mainStdout)
 }
 
 // Source https://gist.github.com/mindscratch/0faa78bd3c0005d080bf

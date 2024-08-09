@@ -4,6 +4,6 @@ import (
 	"fmt"
 )
 
-func Print(text string) {
-	fmt.Printf("%s", text)
+func Print(a ...any) {
+	fmt.Println(a...)
 }
