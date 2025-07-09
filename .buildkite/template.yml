@@ -1,5 +1,10 @@
-# Used by the 'Add to Buildkite' button in the readme
 name: "Golang Docker Example"
+description: "An example pipeline that runs and tests a Go project inside Docker using Buildkite."
+emoji: ":golang:"
+color: "#EFF9FF"
+languages:
+  - "Go"
+  - "Docker"
 steps:
   - label: ":pipeline:"
     command: "buildkite-agent pipeline upload"
