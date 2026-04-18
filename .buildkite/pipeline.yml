@@ -7,7 +7,7 @@ steps:
       label: ':golang: vet'
       command: go vet ./...
       plugins:
-        - docker-compose#v5.4.0:
+        - docker-compose#v5.12.1:
             run: app
     - key: test
       label: ':golang: test'
@@ -16,7 +16,7 @@ steps:
       artifact_paths:
         - 'coverage.txt' # Upload the coverage report as an artifact.
       plugins:
-        - docker-compose#v5.4.0:
+        - docker-compose#v5.12.1:
             run: app
   # Build the application after the quality assurance steps are done.
   - key: build
@@ -25,6 +25,6 @@ steps:
     artifact_paths:
       - 'dist/app' # Upload the built application as an artifact.
     plugins:
-      - docker-compose#v5.4.0:
+      - docker-compose#v5.12.1:
           run: app
     depends_on: quality_assurance
